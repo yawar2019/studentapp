@@ -4,9 +4,12 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template: `     <p>{{title}}</p>
+                  <h1>Great to see {{Hero}}</h1>
+                  <button>click me</button>`,
+  styles: 'p{color:gold}'
 })
 export class AppComponent {
-  title = 'studentapp';
+  title = 'My First App';
+  Hero='Shaktiman';
 }

@@ -1,0 +1,61 @@
+<p>home works!</p>
+
+<!-- 
+@if(a==1){
+    <app-root></app-root>
+}
+@else if(a==2)
+{
+    <app-about></app-about>
+}
+@else{
+    <span>no component to display</span>
+} -->
+
+@switch (alphabet) {
+  @case ("a") { <h1>alphabet is called</h1>} 
+  @case ("e") { <h1>alphabet is called</h1>}
+  @case ("i") { <h1>alphabet is called</h1>}
+  @case ("o") { <h1>alphabet is called</h1>}
+  @case ("u") { <h1>alphabet is called</h1>}
+   
+ @default {
+    <h1>consonant.</h1>
+  }
+}
+
+@for (x of carlist; track $index ) {
+  <ul>
+    <li>{{x}}</li>
+  </ul>
+}
+<!-- 
+@for (x of sports; track $index ) {
+    <ul>
+        <li>{{x.id}}</li>
+        <li>{{x.name}}</li>
+    </ul>
+  } -->
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+    </tr>
+  @for (x of sports; track $index ) {
+    <tr>
+        <td>{{x.id}}</td>
+        <td>{{x.name}}</td>
+    </tr>
+  }
+</table>
+
+<input type="text" [value]="username">
+<input type="text" value={{username}}>
+<input type="text" value={{username}} [disabled]="false">
+
+
+<h1 [class]="myfirstclass" class="first">Good day</h1>
+<h1 [class]="myfirstclassarr" >Good day array</h1>
+<h1 [class]="myfirstclassObj" >Good day Object</h1>
+<h1 [class]="isFirstClassAvailable?myfirstclass:mysecondclass" >Good day condition</h1>
