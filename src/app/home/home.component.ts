@@ -4,10 +4,12 @@ import { AboutComponent } from '../about/about.component';
 import { first } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AppHighlightTextColorDirective } from '../app-highlight-text-color.directive';
+import { RedTextHighlightColorDirective } from '../red-text-highlight-color.directive';
 
 @Component({
   selector: 'app-home',
-  imports: [AppComponent,AboutComponent,FormsModule,CommonModule],
+  imports: [AppComponent,AboutComponent,FormsModule,CommonModule,AppHighlightTextColorDirective,RedTextHighlightColorDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
