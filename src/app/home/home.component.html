@@ -59,3 +59,76 @@
 <h1 [class]="myfirstclassarr" >Good day array</h1>
 <h1 [class]="myfirstclassObj" >Good day Object</h1>
 <h1 [class]="isFirstClassAvailable?myfirstclass:mysecondclass" >Good day condition</h1>
+
+<h1 [style.color]="isFirstClassAvailable?'red':'blue'">Style Binding</h1>
+<h1 [style.color]="myFirstcolor">Style Binding</h1>
+<h1 [style]="myAllStyle">All Style Binding</h1>
+
+<button (click)="fun1()"> click me</button>
+<input type="text" (change)="fun2('shuruti')"/>
+<input type="text" (change)="fun3($event)" value="Shinde"/>
+<button (click)="username='Pravin'"> click me</button>
+
+{{username}}
+<br>
+<input type="text" #firstRefVal />
+
+<button (click)="Myfun(firstRefVal.value)">ref click</button>
+
+
+
+<input type="text" [(ngModel)]="TwoWayBindVar" />
+{{TwoWayBindVar}}<br>
+<br>
+<!-- if -->
+<span *ngIf="isdirectavail">Batman wakeup at night</span>
+<br>
+<!-- if-else -->
+<span *ngIf="isdirectavail; then ifBlock;else elseBlock">
+ Super Man Fly on air
+</span>
+
+<ng-template #ifBlock>
+  Super Man Fly on air very fastly
+</ng-template>
+
+<ng-template #elseBlock>
+  Super Man walks on road
+</ng-template>
+
+
+<!-- Switchcase -->
+
+
+<div [ngSwitch]="username">
+<div *ngSwitchCase="'Bhavani'">{{username}} is playing Cricket</div>
+<div *ngSwitchCase="'Ravi'">{{username}}  is playing chess</div>
+<div *ngSwitchCase="'Shinde'">{{username}} is playing karate</div>
+<div *ngSwitchDefault>{{username}} is Coding</div>
+</div>
+
+<!-- 
+forloop -->
+
+<div *ngFor="let c of carlist">
+<ul>
+  <li>{{c}}</li>
+</ul>
+</div><br>
+
+<table>
+  <tr>
+    <th>sno</th>
+    <th>id</th>
+    <th>name</th>
+  </tr>
+<tr *ngFor="let c of sports;let i=odd">
+  
+    <td>{{i}}</td>
+    <td>{{c.id}}</td>
+    <td>{{c.name}}</td>
+</tr>
+</table>
+
+<p [ngClass]="myfirstclassObj">NgClass</p>
+<p [ngStyle]="myAllStyle">NgStyle</p>
