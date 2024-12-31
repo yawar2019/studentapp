@@ -135,3 +135,7 @@ forloop -->
 
 <div appAppHighlightTextColor>Hi I am doing good today!</div>
 <div appRedTextHighlightColor>Hi this is Angular Class</div>
+
+<p>**** About Component is Called ******</p>
+<app-about [parentData]="username" (childData)="message=$event"></app-about>
+{{message}}

@@ -15,6 +15,7 @@ import { RedTextHighlightColorDirective } from '../red-text-highlight-color.dire
 })
 export class HomeComponent {
 alphabet="z";
+message="";
 isdirectavail=false;
 carlist=['BMW','Tata','TesLa','Nano'];
 sports=[

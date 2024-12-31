@@ -11,7 +11,8 @@ export class RedTextHighlightColorDirective implements OnInit {
    this.renderer.setStyle(this.element.nativeElement,'color','green')
   }
 
-  @HostListener('mouseenter') onmouseenter(event:Event){
+  @HostListener('mouseenter') 
+  onmouseenter(event:Event){
    this.renderer.setStyle(this.element.nativeElement,'color','red')
 
   }
