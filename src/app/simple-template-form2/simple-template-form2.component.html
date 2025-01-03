@@ -2,21 +2,15 @@
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">First name</label>
       <input type="text" #fname="ngModel" class="form-control" 
-       [(ngModel)]="studentObj.firstname"
-        name="firstname"
-        value="Mark" 
-        required 
-        minlength="3">
-      <div class="text-danger">
-        @if (fname.errors?.['required'] && fname.touched && fname.dirty) {
-       
+       [(ngModel)]="studentObj.firstname" name="firstname" value="Mark" required minlength="3">
+      <div class="text-danger" >
+       <div *ngIf="fname.errors?.['required'] && fname.touched && fname.dirty">
           Required!
-          
-        }  
-        @if(fname.errors?.['minlength'] &&  fname.touched && fname.dirty)
-        {
-         atleast 3 letters required 
-        }
+        </div>
+        <div *ngIf="fname.errors?.['minlength'] &&  fname.touched && fname.dirty">
+        
+          minmum 3 Characters   should give</div>
+        
        
       </div>
     </div>
@@ -36,13 +30,11 @@
          [(ngModel)]="studentObj.username" name="username" 
          aria-describedby="inputGroupPrepend" required email>
         <div class="text-danger">
-          {{uname.errors|json}}
-          @if (uname.errors?.['email']) {
-       
-            Valid Email Required!
-            
-          }  
+            <div *ngIf="uname.errors?.['email']">   
+                Valid Email Required!
+            </div>
         </div>
+         
       </div>
     </div>
     <div class="col-md-6">
@@ -90,9 +82,9 @@
       </div>
     </div>
     <div class="col-12">
-      <button class="btn btn-primary" (click)="onSubmit()" [disabled]="!stdForm.valid">Submit form</button>
+      <button class="btn btn-primary" [disabled]="stdForm.invalid" (click)="onSubmit()">Submit form</button>
     </div>
   </form>
 
   {{stdForm.value|json}}
-  {{stdForm.valid}}
+  {{fname}}
