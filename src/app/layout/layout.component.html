@@ -1,0 +1,87 @@
+
+
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact</a>
+    </li>
+  </ul>
+
+<router-outlet></router-outlet>
+
+
+<!-- 
+*notes 
+
+moving from one component to another component is called as Routing in Angular
+
+
+step1:
+
+open app.routes.ts
+
+step2:
+
+const routes:Routes=
+[
+
+{path:'home',component:HomeComponent},
+{path:'about',component:AboutComponent},
+{path:'contact',component:ContactComponent}
+
+]
+
+step3:
+Create Layout Component
+
+
+<a href="/home">Home</a>
+<a href="/about">About</a>
+<a href="/contact">Contact</a>
+
+
+step4:
+import in Layout:[RouterOutlet]
+<router-outlet></router-outlet>
+
+  how to resolve Reloading issue?
+
+      Replace in your anchor tag (a)  href with routerLink
+     if you want to use routerLink then import [RouterLink] 
+
+
+step5:
+how to make default page?
+
+[
+
+{path:'',component:HomeComponent},
+{path:'about',component:AboutComponent},
+{path:'contact',component:ContactComponent}
+
+]
+
+
+<a href="/">Home</a>
+
+
+
+Towmorow Session:
+
+if no page foud one nofoundpage should be redirect
+how you can pass value as param
+how you will get that value
+
+how you can pass value as querystring
+how you will read that querystring value
+
+
+
+
+-->

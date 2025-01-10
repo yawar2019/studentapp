@@ -7,7 +7,8 @@ import { ReactiveFormComponent } from './app/reactive-form/reactive-form.compone
 import { SimpleTemplateForm2Component } from './app/simple-template-form2/simple-template-form2.component';
 import { FormbuilderComponent } from './app/formbuilder/formbuilder.component';
 import { DynamicFormComponent } from './app/dynamic-form/dynamic-form.component';
+import { LayoutComponent } from './app/layout/layout.component';
 //import { ReactiveFormBuilderComponent } from './app/reactive-form-builder/reactive-form-builder.component';
 
-bootstrapApplication(DynamicFormComponent, appConfig)
+bootstrapApplication(LayoutComponent, appConfig)
   .catch((err) => console.error(err));
