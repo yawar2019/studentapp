@@ -3,13 +3,13 @@
       <label for="validationCustom01" class="form-label">First name</label>
       <input type="text" class="form-control" formControlName="firstname" value="Mark" required>
       <div class="text-danger">
-        {{stdForm.errors|json}}
-        <!-- <div *ngIf="stdForm.get('firstname')?.touched && stdForm.get('firstname')?.invalid">
+        <!-- {{stdForm.errors|json}} -->
+        <div *ngIf="stdForm.get('firstname')?.touched && stdForm.get('firstname')?.invalid">
             <div *ngIf="stdForm.get('firstname')?.hasError('required')">First name is required</div>
-          </div> -->
-           <div  *ngIf="stdForm.controls['firstname'].errors?.['required']">
+          </div>
+           <!-- <div  *ngIf="stdForm.controls['firstname'].errors?.['required']">
 Required
-           </div>
+           </div> -->
       </div>
     </div>
     <div class="col-md-4">

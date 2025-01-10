@@ -28,7 +28,8 @@ export class ReactiveFormComponent {
     }
   ]
 
-  stdForm:FormGroup=new FormGroup({
+  stdForm:FormGroup=new FormGroup(
+    {
     firstname:new FormControl("Radha",[Validators.required,Validators.maxLength(6)]),
     lastname:new FormControl("",[Validators.maxLength(3)]),
     username:new FormControl(""),
@@ -36,7 +37,8 @@ export class ReactiveFormComponent {
     state:new FormControl(""),
     zipCode:new FormControl(""),
     IsAgree:new FormControl(false), 
-  })
+  }
+)
 
   onSubmit(){
     console.log(this.stdForm);

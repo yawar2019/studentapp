@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngFor="let control of formConfig">
+      <label>{{ control.label }}</label>
+      <ng-container [ngSwitch]="control.type">
+
+        <input *ngSwitchCase="'text'" [type]="control.type" [formControlName]="control.name" />
+        <select *ngSwitchCase="'dropdown'" [formControlName]="control.name">
+          <option *ngFor="let option of control.options" [value]="option.key">{{ option.label }}</option>
+        </select>
+        <div *ngSwitchCase="'radio'">
+            <label *ngFor="let option of control.options">
+              <input type="radio" [value]="option.key" [formControlName]="control.name" /> {{ option.label }}
+            </label>
+          </div>
+
+          
+      </ng-container>
+      <div *ngIf="form.get(control.name)?.invalid && form.get(control.name)?.touched">
+        <small *ngIf="form.get(control.name)?.errors?.['required']">{{ control.label }} is required</small>
+        <small *ngIf="form.get(control.name)?.errors?.['minlength']">Minimum length is {{ control.validators.minLength }}</small>
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+  </form>

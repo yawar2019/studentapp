@@ -12,17 +12,20 @@ export class FormbuilderComponent implements OnInit{
   stdForm:FormGroup;
   constructor(private fbuilder:FormBuilder)
   {
-    this.stdForm=this.fbuilder.group({
-      firstname:['Radha',[Validators.required]],
+    this.stdForm=this.fbuilder
+    .group(
+      {
+      firstname:['Radha',[Validators.required,Validators.minLength(2)]],
       lastname:'',
       username:'',
       city:'',
       state:'',
       zipCode:'',
       IsAgree:false, 
-    })
+    }
+  )
   }
- 
+
   ngOnInit(): void {
 
    
