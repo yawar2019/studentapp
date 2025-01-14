@@ -9,7 +9,7 @@
       <a class="nav-link" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link"  routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact</a>
+      <a class="nav-link"  [routerLink]="['/contact',1,'Ravi']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact</a>
     </li>
   </ul>
 
@@ -75,6 +75,7 @@ how to make default page?
 Towmorow Session:
 
 if no page foud one nofoundpage should be redirect
+
 how you can pass value as param
 how you will get that value
 
