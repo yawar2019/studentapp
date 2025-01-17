@@ -9,7 +9,7 @@
       <a class="nav-link" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link"  [routerLink]="['/contact',1,'Ravi']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact</a>
+      <a class="nav-link"  [routerLink]="['/contact',1,'Ravi']" [queryParams]="{page:1,search:'shiva'}" fragment="loading" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact</a>
     </li>
   </ul>
 
