@@ -1,20 +1,42 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [RouterLink,RouterOutlet],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-constructor(private router:Router)
+
+  user={
+    id:"",
+    name:""
+  }
+
+constructor(private router:Router,private route:ActivatedRoute)
 {
 
 }
 
 @Input({required:true}) parentData:string="";
 @Output() childData=new EventEmitter();
+
+
+ngOnInit(): void {
+
+  this.route.params.subscribe((data)=>{
+    this.user={
+      id:data['id'],
+      name:data['name']
+     }
+
+   })
+
+}
+
+
+
 
 MyChildEvent()
 {

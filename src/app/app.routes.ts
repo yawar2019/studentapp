@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserComponent } from './user/user.component';
 
 export const routes: Routes = [
     {
@@ -11,7 +12,12 @@ component:HomeComponent
     },
     {
         path:'about',
-        component:AboutComponent
+        component:AboutComponent,
+        children:[
+            {
+                path:':id/:name',
+                component:UserComponent
+            }]
     },
     {
         path:'contact/:id/:name',

@@ -5,3 +5,14 @@
 <button (click)="MyChildEvent()">Send Child Data to Parent</button>
 
 <button (click)="GottoContact()">Go to Contact</button>
+
+<br>
+
+<a [routerLink]="['/about',1,'Anand']">Anand</a><br>
+<a [routerLink]="['/about',2,'Ravi']">Ravi</a><br>
+<a [routerLink]="['/about',3,'Sunil']">Sunil</a>
+
+
+ 
+
+<router-outlet></router-outlet>
