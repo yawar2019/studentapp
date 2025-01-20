@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppHighlightTextColorDirective } from '../app-highlight-text-color.directive';
 import { RedTextHighlightColorDirective } from '../red-text-highlight-color.directive';
+import { AppServiceService } from '../app-service.service';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +24,11 @@ sports=[
   {id:2,name:"Bumrah"},
   {id:3,name:"Yuvi"}
 ];
+
+
+constructor(private app:AppServiceService){
+
+}
 
 username="Ananad";
 TwoWayBindVar="Hello two way bind";
@@ -61,5 +67,16 @@ Myfun(val:string)
 
   alert(val);
 }
+
+
+login(){
+this.app.setAuthDetails('true');
+}
+
+
+logout(){
+  this.app.setAuthDetails('false');
+}
+
 
 }

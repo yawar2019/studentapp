@@ -139,3 +139,6 @@ forloop -->
 <p>**** About Component is Called ******</p>
 <app-about [parentData]="username" (childData)="message=$event"></app-about>
 {{message}}
+
+<button (click)="login()">Login</button>
+<button (click)="logout()">Logout</button>
