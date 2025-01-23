@@ -1,0 +1,15 @@
+<p>employeedetails works!</p>
+
+
+<table>
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>EmpSalary</th>
+    </tr>
+    <tr *ngFor="let emp of service.AllEmployees">
+        <td>{{emp.EmpId}}</td>
+        <td>{{emp.EmpName}}</td>
+        <td>{{emp.EmpSalary}}</td>
+    </tr>
+</table>

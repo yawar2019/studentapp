@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { IDeactivate } from '../app-deactive-guard.service';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +8,7 @@ import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/route
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
-export class AboutComponent {
+export class AboutComponent implements IDeactivate {
 
   user={
     id:"",
@@ -18,6 +19,16 @@ constructor(private router:Router,private route:ActivatedRoute)
 {
 
 }
+  canExist(): boolean{
+if(confirm("Are you sure you want to Exit?"))
+{
+  return true;
+}
+else{
+  return false;
+}
+
+  }
 
 @Input({required:true}) parentData:string="";
 @Output() childData=new EventEmitter();

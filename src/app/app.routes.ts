@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserComponent } from './user/user.component';
 import { AppguardServiceService } from './appguard-service.service';
+import { AppDeactiveGuardService } from './app-deactive-guard.service';
 
 export const routes: Routes = [
     {
@@ -15,7 +16,8 @@ component:HomeComponent
         path:'about',
         component:AboutComponent,
         //canActivate: [AppguardServiceService],
-        canActivateChild: [AppguardServiceService],
+       // canActivateChild: [AppguardServiceService],
+       canDeactivate: [AppDeactiveGuardService],
         children:[
             {
                 path:':id/:name',

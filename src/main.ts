@@ -8,7 +8,9 @@ import { SimpleTemplateForm2Component } from './app/simple-template-form2/simple
 import { FormbuilderComponent } from './app/formbuilder/formbuilder.component';
 import { DynamicFormComponent } from './app/dynamic-form/dynamic-form.component';
 import { LayoutComponent } from './app/layout/layout.component';
+import { GetEmployeesServiceService } from './app/get-employees-service.service';
+import { EmployeedetailsComponent } from './app/employeedetails/employeedetails.component';
 //import { ReactiveFormBuilderComponent } from './app/reactive-form-builder/reactive-form-builder.component';
 
-bootstrapApplication(LayoutComponent, appConfig)
+bootstrapApplication(EmployeedetailsComponent, appConfig)
   .catch((err) => console.error(err));
