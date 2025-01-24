@@ -1,0 +1,15 @@
+<p>Employee Registration!</p>
+
+
+<form #empForm="ngForm">
+    <label>EmpName</label>
+    <input type="text" name="EmpName" [(ngModel)]="service.Employee.EmpName" [value]="EmployeeData.EmpName"><br>
+
+    <label>EmpSalary</label>
+    <input type="text" name="EmpSalary" [(ngModel)]="service.Employee.EmpSalary" [value]="EmployeeData.EmpSalary">
+    
+    <input type="button" (click)="EmployeeAdd(empForm.value)" value="Save" />
+</form>
+
+
+<button (click)="test()">check data</button>
