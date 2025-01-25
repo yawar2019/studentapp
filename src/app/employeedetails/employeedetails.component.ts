@@ -18,6 +18,7 @@ constructor(public service:GetEmployeesServiceService)
 {
 
 }
+ 
    ngOnInit(): void {
     this.service.getEmployees().subscribe(data=>{
     this.service.AllEmployees=data;
@@ -30,7 +31,7 @@ constructor(public service:GetEmployeesServiceService)
 
   EmployeeEdit(id:any)
     {
-      this.service.Employee=(this.service.AllEmployees.filter(x => x.EmpId == id)) as unknown as IEmployee;
+      this.service.Employee=(this.service.AllEmployees.find(x => x.EmpId == id)) as IEmployee;
      console.log(this.service.Employee);
     }
 
@@ -40,6 +41,11 @@ constructor(public service:GetEmployeesServiceService)
       this.service.DeleteEmployee(id).subscribe(data=>{
         
         alert('Record Deleted Successfully');
+        this.service.getEmployees().subscribe(data=>{
+          this.service.AllEmployees=data;
+           
+          })
+          
         })
         
     }

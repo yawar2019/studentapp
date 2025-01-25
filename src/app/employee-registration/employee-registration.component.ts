@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GetEmployeesServiceService, IEmployee } from '../get-employees-service.service';
 
@@ -15,23 +15,29 @@ export class EmployeeRegistrationComponent {
     EmpId: 0,
     EmpName: '',
     EmpSalary: 0
+    
   };
+  
   constructor(public service:GetEmployeesServiceService)
   {
-
+ 
   }
-  test()
-  {
-   console.log(this.EmployeeData); 
-  }
+  
   EmployeeAdd(Employee:IEmployee)
   {
+    
   this.service.SaveEmployee(Employee).subscribe(data=>{
- if(data.EmpId>0){
-  this.service.getEmployees();
- }
+  
+  this.service.getEmployees().subscribe(data=>{
+    this.service.AllEmployees=data;
+     
+    })
+ 
+ this.EmployeeData.EmpId=0;
+ this.EmployeeData.EmpName='';
+ this.EmployeeData.EmpSalary=0;
   })
-  
-  
-  }
+
+}
+   
 }

@@ -1,7 +1,7 @@
 <p>employeedetails works!</p>
 
 
-<table class="table">
+<table class="table-bordered">
     <tr>
         <th>EmpId</th>
         <th>EmpName</th>
@@ -12,9 +12,9 @@
         <td>{{emp.EmpId}}</td>
         <td>{{emp.EmpName}}</td>
         <td>{{emp.EmpSalary}}</td>
-        <td><a (click)="EmployeeEdit(emp.EmpId)">Edit</a>|<a (click)="EmployeeDelete(emp.EmpId)">Delete</a></td>
+        <td><a class="btn btn-primary btn-sm" (click)="EmployeeEdit(emp.EmpId)">Edit</a>|<a class="btn btn-danger btn-sm" (click)="EmployeeDelete(emp.EmpId)">Delete</a></td>
     </tr>
-</table>
+</table>    
 
 <br>
 <app-employee-registration [EmployeeData]="service.Employee"></app-employee-registration>

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 export interface IEmployee
 {
+  
   EmpId:0,
   EmpName:'',
   EmpSalary:0,
@@ -35,8 +36,15 @@ return this.http.get(this.url+'api/tbl_Employees');
 
 SaveEmployee(Employee:IEmployee):Observable<any>
 {
-return this.http.post(this.url+'api/tbl_Employees',Employee);
+  if(Employee.EmpId>0)
+    {
+      return this.http.put(this.url+'api/tbl_Employees/'+Employee.EmpId,Employee);
+    }
+    else{
+      return this.http.post(this.url+'api/tbl_Employees',Employee);
+    }
 }
+
 
 DeleteEmployee(Id:any):Observable<any>
 {
