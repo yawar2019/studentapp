@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SimpleTemplateFormComponent } from '../simple-template-form/simple-template-form.component';
+import { SimpleNgContentExampleComponent } from '../simple-ng-content-example/simple-ng-content-example.component';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [SimpleNgContentExampleComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })

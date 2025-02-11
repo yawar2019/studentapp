@@ -10,7 +10,9 @@ import { DynamicFormComponent } from './app/dynamic-form/dynamic-form.component'
 import { LayoutComponent } from './app/layout/layout.component';
 import { GetEmployeesServiceService } from './app/get-employees-service.service';
 import { EmployeedetailsComponent } from './app/employeedetails/employeedetails.component';
+import { LifeCycleExampleComponent } from './app/life-cycle-example/life-cycle-example.component';
+import { ContactComponent } from './app/contact/contact.component';
 //import { ReactiveFormBuilderComponent } from './app/reactive-form-builder/reactive-form-builder.component';
 
-bootstrapApplication(EmployeedetailsComponent, appConfig)
+bootstrapApplication(LifeCycleExampleComponent, appConfig)
   .catch((err) => console.error(err));
