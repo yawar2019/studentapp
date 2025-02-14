@@ -1,0 +1,20 @@
+<p>signal-example works!</p>
+ 
+
+<span>initial value</span>{{count()}}<br>
+<span>calculated value</span>{{doublecount()}}
+
+
+
+ <button (click)="updateValue()">update count value</button>
+
+
+<ul>
+    <li *ngFor="let user of users()">
+        {{user.name}}
+    </li>
+</ul>
+
+
+<button (click)="addUser()">Add users</button>
+

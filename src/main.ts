@@ -12,7 +12,10 @@ import { GetEmployeesServiceService } from './app/get-employees-service.service'
 import { EmployeedetailsComponent } from './app/employeedetails/employeedetails.component';
 import { LifeCycleExampleComponent } from './app/life-cycle-example/life-cycle-example.component';
 import { ContactComponent } from './app/contact/contact.component';
+import { MatUIExampleComponent } from './app/mat-uiexample/mat-uiexample.component';
+import { SignalExampleComponent } from './app/signal-example/signal-example.component';
+import { ExampleOnPipesComponent } from './app/example-on-pipes/example-on-pipes.component';
 //import { ReactiveFormBuilderComponent } from './app/reactive-form-builder/reactive-form-builder.component';
 
-bootstrapApplication(LifeCycleExampleComponent, appConfig)
+bootstrapApplication(ExampleOnPipesComponent, appConfig)
   .catch((err) => console.error(err));

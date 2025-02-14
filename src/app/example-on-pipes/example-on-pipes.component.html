@@ -1,0 +1,29 @@
+<p>example-on-pipes works!</p>
+
+
+{{price|currency}}<br>
+ {{price|currency:'EUR':'symbol-narrow':'5.2-3'}}  <!--4 atleast 4 digit should be there before decimal --><br>
+
+ <!-- string pipe example -->
+ {{Fname|uppercase}} <span>upper case ex</span><br>
+ {{Lname|lowercase}} <span>lower case ex</span><br>
+ {{MiddleName|titlecase}} <span>MiddleName case ex</span><br>
+
+ <!-- date pipe example -->
+  {{currentDate}}<br><!-- Tue Feb 11 2025 21:57:44 GMT+0530 (India Standard Time) Feb 11, 2025 -->
+{{currentDate|date}} <br><!-- Feb 11, 2025 -->
+{{currentDate|date:'fullDate'}} <br><!-- Tuesday, February 11, 2025 -->
+{{currentDate|date:'short'}} <br><!-- 2/11/25, 10:01 PM-->
+{{currentDate|date:'longDate'}} <br><!-- February 11, 2025 -->
+{{currentDate|date:'mediumDate'}} <br><!-- Feb 11, 2025 -->
+{{currentDate|date:'yyyy-MM-dd'}} <br><!-- 2025-02-11 -->
+{{currentDate|date:'shortTime'}} <br><!-- 10:03 PM -->
+
+{{empObj|json}}<br>
+
+{{fruits|slice:1:2}}<br>
+
+{{mystring|slice:0:7}}<br>
+{{temp|percent}}
+<br>
+{{Fname|changCase}}
