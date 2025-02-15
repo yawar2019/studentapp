@@ -15,7 +15,8 @@ import { ContactComponent } from './app/contact/contact.component';
 import { MatUIExampleComponent } from './app/mat-uiexample/mat-uiexample.component';
 import { SignalExampleComponent } from './app/signal-example/signal-example.component';
 import { ExampleOnPipesComponent } from './app/example-on-pipes/example-on-pipes.component';
+import { RxjsExampleComponent } from './app/rxjs-example/rxjs-example.component';
 //import { ReactiveFormBuilderComponent } from './app/reactive-form-builder/reactive-form-builder.component';
 
-bootstrapApplication(ExampleOnPipesComponent, appConfig)
+bootstrapApplication(RxjsExampleComponent, appConfig)
   .catch((err) => console.error(err));
