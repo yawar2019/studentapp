@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { concatMap, delay, filter, interval, map, Observable, of, Subscriber, switchMap, take } from 'rxjs';
+import { concatMap, delay,debounce, filter, interval, map, mergeMap, Observable, of, Subscriber, switchMap, take, debounceTime, scan, fromEvent } from 'rxjs';
 @Component({
   selector: 'app-rxjs-example',
   imports: [],
@@ -22,7 +22,8 @@ export class RxjsExampleComponent {
 //this.OperatorExample();
 //this.OperatorExample2();
 //this.OperatorExample3();
-this.OperatorExample4();
+//this.OperatorExample4();
+this.OperatorExample6();
   }
 
    fetchData() {
@@ -141,4 +142,32 @@ OperatorExample4()
 }
 
 
+OperatorExample5()
+{
+
+  const numbers=of(1,2,3);
+
+  const result=numbers.pipe(
+    mergeMap(value=>interval(5000).pipe(take(5)))
+    //.pipe(take(1))
+     
+    
+  )
+  result.subscribe(x=>console.log(x));
+
+}
+//debounce type operator:only emits the level of value specified oamount of time
+
+
+OperatorExample6()
+{
+
+  
+const clicks = fromEvent(document, 'click');
+const result = clicks.pipe(
+  scan(i => ++i, 1),
+  debounce(i => interval(200 * i))
+);
+result.subscribe(x => console.log(x));
+}
 }
