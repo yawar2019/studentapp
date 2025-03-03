@@ -11,6 +11,10 @@
     <li class="nav-item">
       <a class="nav-link"  [routerLink]="['/contact',1,'Ravi']" [queryParams]="{page:1,search:'shiva'}" fragment="loading" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link"  [routerLink]="['/ParentComponent']"   routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">ViewChild</a>
+    </li>
+    
   </ul>
 
 <router-outlet></router-outlet>

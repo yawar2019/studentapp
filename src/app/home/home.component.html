@@ -142,3 +142,11 @@ forloop -->
 
 <button (click)="login()">Login</button>
 <button (click)="logout()">Logout</button>
+
+<span>ngRx Example</span>
+{{count$|async}}
+
+
+<button (click)="onIncrement()">increment</button>
+<button (click)="onDecrement()">decrement</button>
+<button (click)="onReset()">reset</button>

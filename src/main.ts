@@ -18,5 +18,5 @@ import { ExampleOnPipesComponent } from './app/example-on-pipes/example-on-pipes
 import { RxjsExampleComponent } from './app/rxjs-example/rxjs-example.component';
 //import { ReactiveFormBuilderComponent } from './app/reactive-form-builder/reactive-form-builder.component';
 
-bootstrapApplication(RxjsExampleComponent, appConfig)
+bootstrapApplication(LayoutComponent, appConfig)
   .catch((err) => console.error(err));

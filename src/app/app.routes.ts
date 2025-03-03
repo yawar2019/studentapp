@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UserComponent } from './user/user.component';
 import { AppguardServiceService } from './appguard-service.service';
 import { AppDeactiveGuardService } from './app-deactive-guard.service';
+import { ParentComponent } from './ViewChild/parent/parent.component';
 
 export const routes: Routes = [
     {
@@ -24,6 +25,10 @@ component:HomeComponent
                 component:UserComponent
                 
             }]
+    },
+    {
+        path:'ParentComponent',
+        component:ParentComponent
     },
     {
         path:'contact/:id/:name',
